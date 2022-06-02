@@ -1,0 +1,35 @@
+# docker-compose.yml
+version: '3'
+services:
+  testapp-db:
+    image: postgres
+    container_name: testapp-db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+      - DATABASE_HOST=db-host
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/data
+    networks:
+      - networks
+    ports:
+      - "5432:5432"
+  testapp-web:
+    build: .
+    container_name: testapp-web
+    volumes:
+      - "./:/testapp"
+    ports:
+      - "3000:3000"
+      - "3035:3035"
+    depends_on:
+      - testapp-db
+    networks:
+      - networks
+volumes:
+  testapp-web:
+  testapp-db:
+networks:
+  networks:
+    driver: bridge
