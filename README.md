@@ -1,24 +1,16 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Purpose of the Project:
 
-Things you may want to cover:
+Basically there are two purposes:
+* Explore running Docker containers to simplify development environments, and understand how containerization can work
+* Explore setting up Devise in a Rails 6 project
 
-* Ruby version
+## Requirements
 
-* System dependencies
+* Ruby v. 2.6.5 
+* Docker v. 20.10.14
 
-* Configuration
+## Tests
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Minimal to start, will impliment RSpec as time allows.
